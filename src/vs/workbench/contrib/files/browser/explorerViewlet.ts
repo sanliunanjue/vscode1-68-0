@@ -334,7 +334,7 @@ viewsRegistry.registerViewWelcomeContent(EmptyView.ID, {
 
 viewsRegistry.registerViewWelcomeContent(EmptyView.ID, {
 	content: localize({ key: 'noFolderButEditorsHelp', comment: ['Please do not translate the word "commmand", it is part of our internal syntax which must not change'] },
-		"You have not yet opened a folder.\n{0}\nOpening a folder will close all currently open editors. To keep them open, {1} instead.", openFolderButton, addAFolderButton),
+		"hzbank You have not yet opened a folder.\n{0}\nOpening a folder will close all currently open editors. To keep them open, {1} instead.", openFolderButton, addAFolderButton),
 	when: ContextKeyExpr.and(
 		// editors are opened
 		ContextKeyExpr.has('editorIsOpen'),

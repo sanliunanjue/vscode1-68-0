@@ -5,11 +5,7 @@
 		"ecmaVersion": 6,
 		"sourceType": "module"
 	},
-	"plugins": [
-		"@typescript-eslint",
-		"jsdoc",
-		"header"
-	],
+	"plugins": ["@typescript-eslint", "jsdoc", "header"],
 	"rules": {
 		"constructor-super": "warn",
 		"curly": "warn",
@@ -50,9 +46,7 @@
 			"warn",
 			{
 				"selector": "class",
-				"format": [
-					"PascalCase"
-				]
+				"format": ["PascalCase"]
 			}
 		],
 		"code-no-unused-expressions": [
@@ -69,26 +63,11 @@
 			"warn",
 			{
 				"common": [],
-				"node": [
-					"common"
-				],
-				"browser": [
-					"common"
-				],
-				"electron-sandbox": [
-					"common",
-					"browser"
-				],
-				"electron-browser": [
-					"common",
-					"browser",
-					"node",
-					"electron-sandbox"
-				],
-				"electron-main": [
-					"common",
-					"node"
-				]
+				"node": ["common"],
+				"browser": ["common"],
+				"electron-sandbox": ["common", "browser"],
+				"electron-browser": ["common", "browser", "node", "electron-sandbox"],
+				"electron-main": ["common", "node"]
 			}
 		],
 		"header/header": [
@@ -104,27 +83,20 @@
 	},
 	"overrides": [
 		{
-			"files": [
-				"*.js"
-			],
+			"files": ["*.js"],
 			"rules": {
 				"jsdoc/no-types": "off"
 			}
 		},
 		{
-			"files": [
-				"**/*.test.ts"
-			],
+			"files": ["**/*.test.ts"],
 			"rules": {
 				"code-no-test-only": "error",
 				"code-no-unexternalized-strings": "off"
 			}
 		},
 		{
-			"files": [
-				"**/vscode.d.ts",
-				"**/vscode.proposed.*.d.ts"
-			],
+			"files": ["**/vscode.d.ts", "**/vscode.proposed.*.d.ts"],
 			"rules": {
 				"vscode-dts-create-func": "warn",
 				"vscode-dts-literal-or-types": "warn",
@@ -151,10 +123,7 @@
 				"vscode-dts-event-naming": [
 					"warn",
 					{
-						"allowed": [
-							"onCancellationRequested",
-							"event"
-						],
+						"allowed": ["onCancellationRequested", "event"],
 						"verbs": [
 							"accept",
 							"change",
@@ -190,9 +159,7 @@
 			}
 		},
 		{
-			"files": [
-				"src/**/*.ts"
-			],
+			"files": ["src/**/*.ts"],
 			"rules": {
 				"code-no-look-behind-regex": "warn",
 				"code-import-patterns": [
@@ -203,9 +170,7 @@
 						// - electron-sandbox
 						// - electron-browser
 						"when": "hasBrowser",
-						"allow": [
-							"vs/css!./**/*"
-						]
+						"allow": ["vs/css!./**/*"]
 					},
 					{
 						// imports that are allowed in all files of layers:
@@ -214,13 +179,11 @@
 						// - electron-main
 						"when": "hasNode",
 						"allow": [
-							"@microsoft/applicationinsights-web",
 							"@parcel/watcher",
 							"@vscode/sqlite3",
 							"@vscode/vscode-languagedetection",
 							"@vscode/ripgrep",
 							"@vscode/iconv-lite-umd",
-							"applicationinsights",
 							"assert",
 							"child_process",
 							"console",
@@ -268,11 +231,7 @@
 					{
 						// imports that are allowed in all /test/ files
 						"when": "test",
-						"allow": [
-							"assert",
-							"sinon",
-							"sinon-test"
-						]
+						"allow": ["assert", "sinon", "sinon-test"]
 					},
 					// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					// !!! Do not relax these rules !!!
@@ -306,16 +265,11 @@
 					// the target property by adding a layer property.
 					{
 						"target": "src/vs/base/~",
-						"restrictions": [
-							"vs/base/~"
-						]
+						"restrictions": ["vs/base/~"]
 					},
 					{
 						"target": "src/vs/base/parts/*/~",
-						"restrictions": [
-							"vs/base/~",
-							"vs/base/parts/*/~"
-						]
+						"restrictions": ["vs/base/~", "vs/base/parts/*/~"]
 					},
 					{
 						"target": "src/vs/platform/*/~",
@@ -437,8 +391,7 @@
 							}, // TODO@layers
 							"tas-client-umd", // node module allowed even in /common/
 							"vscode-textmate", // node module allowed even in /common/
-							"@vscode/vscode-languagedetection", // node module allowed even in /common/
-							"@microsoft/applicationinsights-web" // node module allowed even in /common/
+							"@vscode/vscode-languagedetection" // node module allowed even in /common/
 						]
 					},
 					{
@@ -584,9 +537,7 @@
 			}
 		},
 		{
-			"files": [
-				"test/**/*.ts"
-			],
+			"files": ["test/**/*.ts"],
 			"rules": {
 				"code-import-patterns": [
 					"warn",

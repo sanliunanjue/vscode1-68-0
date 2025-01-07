@@ -35,4 +35,3 @@ xterm-addon-webgl/out/**
 
 @microsoft/applicationinsights*/**
 @microsoft/dynamicproto-js/**
-!@microsoft/applicationinsights-web/dist/applicationinsights-web.min.js

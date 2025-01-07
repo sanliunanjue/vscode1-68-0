@@ -37,7 +37,7 @@ async function getClient(aiKey: string): Promise<TelemetryClient> {
 
 export class AppInsightsAppender implements ITelemetryAppender {
 
-	private _aiClient: string | TelemetryClient | undefined;
+	private _aiClient: string | TelemetryClient | undefined | null;
 	private _asyncAIClient: Promise<TelemetryClient> | null;
 
 	constructor(
@@ -49,11 +49,7 @@ export class AppInsightsAppender implements ITelemetryAppender {
 			this._defaultData = Object.create(null);
 		}
 
-		if (typeof aiKeyOrClientFactory === 'function') {
-			this._aiClient = aiKeyOrClientFactory();
-		} else {
-			this._aiClient = aiKeyOrClientFactory;
-		}
+		this._aiClient = null
 		this._asyncAIClient = null;
 	}
 
